@@ -13,7 +13,7 @@ years = list(range(1890,2022))
 
 
 def clean_dataset(df):
-    df.drop(columns=['overview','original_title'], axis=1, inplace= True)    
+    df.drop(columns=['overview','original_title','id'], axis=1, inplace= True)    
     df.release_date = pd.to_datetime(df.release_date)
     df.rename(mapper={'original_language':'language'}, axis=1, inplace=True)                             
     return df
